@@ -16,3 +16,7 @@ def make_migrations():
 
 def requirements():
     local('/home/vagrant/.virtualenvs/le-code-test/bin/pip install -r requirements.txt ')
+
+def resetdb():
+    local('python manage.py sqlflush|python manage.py dbshell')
+    run_manage('loaddata fixture.json')

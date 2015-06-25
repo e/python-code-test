@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Tweets and Photos</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="static/assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header">
+				<header class="major">
+					<h1>Tweets and Photos</h1>
+					<p>A very well designed test for candidates</p>
+				</header>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main special">
+				<div class="container">
+					<span class="image fit primary"><img src="static/images/pic01.jpg" alt="" /></span>
+					<div class="content">
+						<header class="major">
+							<h2>Scroll to see the tweets and the photos</h2>
+						</header>
+
+{% for result in results %}
+{% if result.photo %}
+<img src="static/{{ result.photo.image }}">
+{% elif result.tweet %}
+{{ result.tweet }}
+{% endif %}
+<br>
+<hr>
+{% endfor %}
+
+					</div>
+				</div>
+			</section>
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/skel.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="static/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>

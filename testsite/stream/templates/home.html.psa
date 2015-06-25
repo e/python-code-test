@@ -1,0 +1,8 @@
+hola
+{% for result in results %}
+{% if result.photo %}
+<img src="static/{{ result.photo.image }}">
+{% elif result.tweet %}
+{{ result.tweet }}
+{% endif %}
+{% endfor %}
